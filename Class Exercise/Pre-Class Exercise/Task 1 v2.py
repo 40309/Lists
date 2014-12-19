@@ -10,7 +10,7 @@ Checker = False
 not_found = False
 
 length = len(NameList)
-length = length -1
+length = length - 1
 
 while Checker != False:
     if NamesList[ThisElement] == user_input:
@@ -22,9 +22,6 @@ while Checker != False:
         ThisElement = ThisElement + 1
 
 if NameList[ThisElement] == user_input:
-    print("{0} was in element {1} in the list".format(ElementSought, ThisElement))
-elif not_found == True:
-    print("The Name was not found")
+    print("{0} was in element {1} in the list".format(user_input, ThisElement))
 else:
-    print()
-    
+    print("The Name, {0} was not found.".format(user_input))
