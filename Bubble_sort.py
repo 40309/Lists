@@ -19,53 +19,16 @@ def user_input():
     search_item = search_item.capitalize()
     return search_list,search_item
 
-    
-    
-
-def linear_search(search_list,search_item):
-    found = False
-    index = 0
-    while not found and index < len(search_list):
-        if search_item == search_list[index]:
-            found = True
-        else:
-            index = index + 1
-    return found
-
-def display(found):
-    if found == True:
-        print("The person you searched for is in the list.")
-    else:
-        print("The person you searched for doesn't exist in the list.")
-
 def bubble_sort(search_list):
-    index = 0
-    index_2 = 1
-    length = len(search_list)
-    length = length - 1
-    for count in range(10):
-        while len(search_list) > index_2:
-            if search_list[index] > search_list[index_2]:
-                temp = search_list[index]
-                search_list[index] = search_list[index_2]
-                search_list[index_2] = temp
-                index = index + 1
-                index_2 = index_2 + 1
-            else:
-                index = index + 1
-                index_2 = index_2 + 1
+    for person in range(len(search_list)-1,0,-1):
+        for i in range(person):
+            if search_list[i]>search_list[i+1]:
+                temp = search_list[i]
+                search_list[i] = search_list[i+1]
+                search_list[i+1] = temp
     print(search_list)
-    sorted_list = search_list
-    return sorted_list
-            
-            
-                
-
-
+    return search_list
     
-#search_list = ["Danish","Tony","Hamza","Jack","Harry R","Harry V"]
-#search_item = input("Please enter the student name: ")
-search_list,search_item = user_input()
-found = linear_search(search_list,search_item)
-display(found)
+search_list = ["XU","Danish","Tony","Hamza","Zara","Harry R","Harry V","Touseef","Tavonga","Paul"]
+#search_list,search_item = user_input()
 sorted_list = bubble_sort(search_list)
